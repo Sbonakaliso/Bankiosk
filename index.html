@@ -4,7 +4,7 @@
         <title>SimpleWebRTC Demo</title>
         <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7773252/764742/css/fonts.css" />
         <link rel="stylesheet" href="css/style.min.css">
-        <link rel="icon" type="image/png" href="img/favicon.png">
+        http://antifavicon.com/genicon2.cgi?txttop=B&txtbot=&fgtop=%23FFFFFF&fgbot=%23FFFFFF&bgtop=%23960096&bgbot=%2300C8F0&bcolor=%23000000&drawborder=no
         <style>
             .videoContainer {
                 position: relative;
@@ -37,8 +37,7 @@
         </style>
     </head>
     <body>
-        <h1 class="logo"><span>simple</span><span>WebRTC</span></h1>
-        <h2>You can build cool stuff with WebRTC in five minutes.</h2>
+        <h1 class="logo"><span>BANK</span><span>IOSK</span></h1>
 
         <h3 id="title">Start a room</h3>
         <form id="createRoom">
@@ -50,26 +49,15 @@
           <button id="screenShareButton"></button>
           (https required for screensharing to work)
         </div>
-        <hr>
         <div class="videoContainer">
-            <video id="localVideo" style="height: 150px;" oncontextmenu="return false;"></video>
+            <video id="localVideo" style="height: 300px;" oncontextmenu="return false;"></video>
             <meter id="localVolume" class="volume" min="-45" max="-20" high="-25" low="-40"></meter>
         </div>
         <div id="localScreenContainer" class="videoContainer">
         </div>
-        <div id="remotes"></div>
-        <hr>
-        <div>
-          <h3>A note on connectivity issues</h3>
-          If you see black videos from peers or the connection state displayed ontop of those videos 
-          either hangs in <i>Connecting to peer...</i> or changes to <i>Connection failed</i>, a direct peer-to-peer connection could not be established.
-          <br>
-          This typically means that a TURN server is required. This <a href="http://www.html5rocks.com/en/tutorials/webrtc/infrastructure/#after-signaling-using-ice-to-cope-with-nats-and-firewalls">tutorial</a> explains the problem.
-          You can check if those peers can connect each other on <a href="https://talky.io">talky.io</a> which runs a TURN server.
-        </div>
-        <div>
-          Want to know more about how some of these features work? Check the <a href="notsosimple.html">documentation</a>
-        </div>
+        <div id="remotes" style="height: 300px;"></div>
+        
+        
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script src="latest.js"></script>
         <script>
