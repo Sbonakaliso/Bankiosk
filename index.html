@@ -38,17 +38,11 @@
     </head>
     <body>
         <h1 class="logo"><span>BANK</span><span>IOSK</span></h1>
-
-        <h3 id="title">Start a room</h3>
         <form id="createRoom">
-            <input id="sessionInput"/>
+            <input id="sessionInput" placeholder="Choose any room name"/>
             <button disabled type="submit">Create it!</button>
         </form>
         <p id="subTitle"></p>
-        <div>
-          <button id="screenShareButton"></button>
-          (https required for screensharing to work)
-        </div>
         <div class="videoContainer">
             <video id="localVideo" style="height: 300px;" oncontextmenu="return false;"></video>
         </div>
