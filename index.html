@@ -39,9 +39,8 @@
     <body>
         <h1 class="logo"><span>BANK</span><span>IOSK</span></h1>
         
--        <h3 id="title">Start a room</h3>
          <form id="createRoom">
-+            <input id="sessionInput" placeholder="Choose any room name"/>
++            <input id="sessionInput" placeholder="Type any world and click "Create!"/>
              <button disabled type="submit">Create it!</button>
          </form>
          <p id="subTitle"></p>
@@ -213,7 +212,7 @@
             function setRoom(name) {
                 document.querySelector('form').remove();
                 document.getElementById('title').innerText = 'Room: ' + name;
-                document.getElementById('subTitle').innerText =  'Link to join: ' + location.href;
+                document.getElementById('subTitle').innerText =  'Share this link with people you want to talk to: ' + location.href;
                 $('body').addClass('active');
             }
 
