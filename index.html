@@ -35,7 +35,7 @@
                 display: none;
             }
             #builder{
-                margin-top:-2%;
+                margin-top:-5%;
             }
             #sessionInput{
                 width:15em;
@@ -44,6 +44,9 @@
                 position:absolute;
                 top:30%;
                 right: 10%;
+            }
+            .cent{
+                text-align:center;
             }
         </style>
     </head>
@@ -57,12 +60,12 @@
          </form>
          <p id="subTitle"></p>
          </div>
-        <div class="videoContainer">
+        <p class="cent"><div class="videoContainer"></p>
             <video id="localVideo" style="height: 300px;" oncontextmenu="return false;"></video>
         </div>
         <div id="localScreenContainer" class="videoContainer">
         </div>
-        <div id="remotes"></div>
+        <p class="cent">div id="remotes"></div></p>
         
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script src="latest.js"></script>
