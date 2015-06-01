@@ -36,26 +36,22 @@
                 display: none;
             }
             #ban{
-                color:rgb(150,0,150);
+                color:rgb(180,0,180);
             }
             #io{
                 color:rgb(0,200,250);
+            }
+            #title{
+                display: none;
+            }
+            #creatore{
+                position:fixed;
+                bottom:2%;
             }
         </style>
     </head>
     <body>
         <h1 class="logo"><span id="ban">BANK</span><span id="io">IOSK</span></h1>
-        <h3 id="title">Start a room</h3>
-        <form id="createRoom">
-            <input id="sessionInput"/>
-            <button disabled type="submit">Create it!</button>
-        </form>
-        <p id="subTitle"></p>
-        <div>
-          <button id="screenShareButton"></button>
-          (https required for screensharing to work)
-        </div>
-        <hr>
         <div class="videoContainer">
             <video id="localVideo" style="height: 150px;" oncontextmenu="return false;"></video>
             <meter id="localVolume" class="volume" min="-45" max="-20" high="-25" low="-40"></meter>
@@ -63,18 +59,15 @@
         <div id="localScreenContainer" class="videoContainer">
         </div>
         <div id="remotes"></div>
-        <hr>
-        <div>
-          <h3>A note on connectivity issues</h3>
-          If you see black videos from peers or the connection state displayed ontop of those videos 
-          either hangs in <i>Connecting to peer...</i> or changes to <i>Connection failed</i>, a direct peer-to-peer connection could not be established.
-          <br>
-          This typically means that a TURN server is required. This <a href="http://www.html5rocks.com/en/tutorials/webrtc/infrastructure/#after-signaling-using-ice-to-cope-with-nats-and-firewalls">tutorial</a> explains the problem.
-          You can check if those peers can connect each other on <a href="https://talky.io">talky.io</a> which runs a TURN server.
+        <div id="creatore">
+            <h3 id="title">Start a room</h3>
+        <form id="createRoom">
+            <input id="sessionInput"/>
+            <button disabled type="submit">Create it!</button>
+        </form>
+        <p id="subTitle"></p>
         </div>
-        <div>
-          Want to know more about how some of these features work? Check the <a href="notsosimple.html">documentation</a>
-        </div>
+        
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script src="latest.js"></script>
         <script>
