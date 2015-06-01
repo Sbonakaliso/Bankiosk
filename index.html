@@ -45,20 +45,17 @@
             body{
                 text-align:center;
             }
-            #createRoom{
-                margin-top:-3%;
-            }
-            #subTitle{
-                margin-top:-3%;
-            }
-            #title{
-                margin-top:-3%;
-            }
         </style>
     </head>
     <body>
         <h1 class="logo"><span>BANK</span><span>IOSK</span></h1>
-        <div id="builder">
+        <div class="videoContainer">
+            <video id="localVideo" style="height: 300px;" oncontextmenu="return false;"></video>
+        </div>
+        <div id="localScreenContainer" class="videoContainer">
+        </div>
+        <div id="remotes"></div>
+         <div id="builder">
         <h3 id="title"></h3>
          <form id="createRoom">
              <input id="sessionInput" placeholder="Type any word and click 'Create!'"/>
@@ -66,13 +63,6 @@
          </form>
          <p id="subTitle"></p>
          </div>
-        <div class="videoContainer">
-            <video id="localVideo" style="height: 300px;" oncontextmenu="return false;"></video>
-        </div>
-        <div id="localScreenContainer" class="videoContainer">
-        </div>
-        <div id="remotes"></div>
-        
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script src="latest.js"></script>
         <script>
