@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="shortcut icon" type="image/x-icon" href="http://antifavicon.com/genicon2.cgi?txttop=B&txtbot=&fgtop=%23FFFFFF&fgbot=%23FFFFFF&bgtop=%23960096&bgbot=%2300C8F0&bcolor=%23000000&drawborder=no" />
         <title>BANKIOSK</title>
         <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7773252/764742/css/fonts.css" />
         <link rel="stylesheet" href="css/style.min.css">
-        <link rel="icon" type="image/png" href="img/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="http://antifavicon.com/genicon2.cgi?txttop=B&txtbot=&fgtop=%23FFFFFF&fgbot=%23FFFFFF&bgtop=%23960096&bgbot=%2300C8F0&bcolor=%23000000&drawborder=no" />
         <style>
             .videoContainer {
                 position: relative;
-                width: 20em;
-                height: 15em;
+                width: 200px;
+                height: 150px;
             }
             .videoContainer video {
                 position: absolute;
                 width: 100%;
                 height: 100%;
+            }
+            .volume {
+                position: absolute;
+                left: 15%;
+                width: 70%;
+                bottom: 5px;
+                height: 5px;
+                display: none;
             }
             .connectionstate {
                 position: absolute;
@@ -27,46 +34,19 @@
             #localScreenContainer {
                 display: none;
             }
-            #ban{
-                color:rgb(180,0,180);
-            }
-            #io{
-                color:rgb(0,200,250);
-            }
-            #title{
-                display: none;
-            }
-            #creatore{
-                position:fixed;
-                bottom:2%;
-            }
-            #remotes{
-                position:fixed;
-                right:4%;
-                top:13%;
-            }
-            #localVideo{
-                position:fixed;
-                left:4%;
-                top:13%;
-            }
         </style>
     </head>
     <body>
-        <h1 class="logo"><span id="ban">BANK</span><span id="io">IOSK</span></h1>
-        <div class="videoContainer">
-            <video id="localVideo" oncontextmenu="return false;"></video>
-        </div>
-        <div id="remotes"></div>
-        <div id="creatore">
-            <h3 id="title">Start a room</h3>
+        <h1 class="logo"><span>BANK</span><span>IOSK</span></h1>
+        <h3 id="title">Start a room</h3>
         <form id="createRoom">
             <input id="sessionInput"/>
             <button disabled type="submit">Create it!</button>
         </form>
         <p id="subTitle"></p>
-        </div>
-        
+        <div class="videoContainer">
+            <video id="localVideo" style="height: 150px;" oncontextmenu="return false;"></video>
+        <div id="remotes"></div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script src="latest.js"></script>
         <script>
