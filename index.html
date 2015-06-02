@@ -34,10 +34,16 @@
             #localScreenContainer {
                 display: none;
             }
+            #ban{
+                color:rgb(190,0,190);
+            }
+            #io{
+                color:rgb(0,240,255);
+            }
         </style>
     </head>
     <body>
-        <h1 class="logo"><span>BANK</span><span>IOSK</span></h1>
+        <h1 class="logo"><span id="ban">BANK</span><span id="io">IOSK</span></h1>
         <h3 id="title">Start a room</h3>
         <form id="createRoom">
             <input id="sessionInput"/>
@@ -45,7 +51,7 @@
         </form>
         <p id="subTitle"></p>
         <div class="videoContainer">
-            <video id="localVideo" style="height: 150px;" oncontextmenu="return false;"></video>
+            <video id="localVideo" oncontextmenu="return false;"></video>
         <div id="remotes"></div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script src="latest.js"></script>
