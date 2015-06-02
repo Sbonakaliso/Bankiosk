@@ -32,19 +32,26 @@
             #io{
                 color:rgb(0,190,250);
             }
+            #panel{
+                position:fixed;
+                bottom:2%;
+                text-align:center;
+            }
         </style>
     </head>
     <body>
         <h1 class="logo"><span id="ban">BANK</span><span id="io">IOSK</span></h1>
-        <h3 id="title">Start a room</h3>
-        <form id="createRoom">
-            <input id="sessionInput"/>
-            <button disabled type="submit">Create it!</button>
-        </form>
-        <p id="subTitle"></p>
         <div class="videoContainer">
             <video id="localVideo" oncontextmenu="return false;"></video>
         <div id="remotes"></div>
+        <div id="panel">
+            <h3 id="title">Start a room</h3>
+            <form id="createRoom">
+                <input id="sessionInput"/>
+                <button disabled type="submit">Create it!</button>
+            </form>
+            <p id="subTitle"></p>
+        </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script src="latest.js"></script>
         <script>
