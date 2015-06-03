@@ -1,4 +1,3 @@
-<script>
             // grab the room from the URL
             var room = location.search && location.search.split('?')[1];
 
@@ -207,4 +206,3 @@
                     
                 }
             });
-        </script>
