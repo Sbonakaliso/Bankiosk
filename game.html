@@ -48,7 +48,7 @@ a{
     <tr><td><a href=#>Squirming Squares</a></td>0%<td></td></tr>
     <tr><td><a href=#>Linear Life</a></td><td>0%</td></tr>
     <tr><td><a href=#>Quadratic Quest</a></td><td>0%</td></tr>
-    <tr><td><a href=#>Cubic Conquest</a></td>0%<td></td></tr>
+    <tr><td><a href=#>Cubic Conquest</a></td><td>0%</td></tr>
     <tr><td><a href=#>Hippy Hyperbolae</a></td><td>0%</td></tr>
     <tr><td><a href=#>Exponential Expedition</a></td><td>0%</td></tr>
     <tr><td><a href=#>Legendary Logarithms</a></td><td>0%</td></tr>
@@ -90,8 +90,8 @@ a{
 function makeNewPosition(){
     
     // Get viewport dimensions (remove the dimension of the div)
-    var h = $(window).height() - 50;
-    var w = $(window).width() - 50;
+    var h = $(".modal-body").height() - 50;
+    var w = $(".modal-body").width() - 50;
     
     var nh = Math.floor(Math.random() * h);
     var nw = Math.floor(Math.random() * w);
