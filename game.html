@@ -67,8 +67,6 @@ a{
         </div>
         <div class="modal-body">
           <div class='a'></div>
-          <div class='a'></div>
-          <div class='a'></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -116,7 +114,7 @@ function calcSpeed(prev, next) {
     
     var greatest = x > y ? x : y;
     
-    var speedModifier = 1;
+    var speedModifier = 0.5;
 
     var speed = Math.ceil(greatest/speedModifier);
 
