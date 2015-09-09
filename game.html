@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</head>
-<style type="text/css">
+  <style type="text/css">
   body{
    background:black; 
    color:gold;
@@ -71,10 +70,33 @@ td{
 a{
   color:rgb(0,180,255);
 }
+body, * {
+    padding: 0 !important; margin: 0: }
+
+#wrapper {
+    width:500px; 
+    height: 500px; 
+    border: 
+        1px solid red; }
+
+li {
+    position: absolute;
+    width: 60px;
+    height: 60px;    
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background-color:#0FF;
+    line-height: 60px;
+    text-align:center;
+    cursor:pointer; }
+
+
 </style>
+</head>
 <body>
 <div class="container">
-  <h2>Mineral Smash 2</h2>
+  <h2>Mineral Smash 2.0</h2>
   <table>
     <tr><td><a href=#>Squirming Squares</a></td><td>0%</td></tr>
     <tr><td><a href=#>Linear Life</a></td><td>0%</td></tr>
@@ -99,7 +121,22 @@ a{
           <h4 class="modal-title">Catch the right answer!</h4>
         </div>
         <div class="modal-body">
-          <div class='a'><div class="shine"></div></div>
+          <!--<div class='a'><div class="shine"></div></div>-->
+          <ul id="wrapper">
+    		<li>1</li>
+    		<li>2</li>
+    		<li>3</li>
+    		<li>4</li>
+    		<li>5</li>
+    		<li>6</li>
+    		<li>7</li>
+    		<li>8</li>
+    		<li>7</li>
+    		<li>8</li>
+    		<li>9</li>
+    		<li>10</li>
+	</ul>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -118,6 +155,81 @@ a{
 	})
 </script>
 <script>
+	$.fn.bounce = function(options) {
+    
+    var settings = $.extend({
+        speed: 10
+    }, options);
+
+    return $(this).each(function() {
+        
+        var $this = $(this),
+            $parent = $this.parent(),
+            height = $parent.height(),
+            width = $parent.width(),
+            top = Math.floor(Math.random() * (height / 2)) + height / 4,
+            left = Math.floor(Math.random() * (width / 2)) + width / 4,
+            vectorX = settings.speed * (Math.random() > 0.5 ? 1 : -1),
+            vectorY = settings.speed * (Math.random() > 0.5 ? 1 : -1);
+
+        // place initialy in a random location
+        $this.css({
+            'top': top,
+            'left': left
+        }).data('vector', {
+            'x': vectorX,
+            'y': vectorY
+        });
+
+        var move = function($e) {
+            
+            var offset = $e.offset(),
+                width = $e.width(),
+                height = $e.height(),
+                vector = $e.data('vector'),
+                $parent = $e.parent();
+
+            if (offset.left <= 0 && vector.x < 0) {
+                vector.x = -1 * vector.x;
+            }
+            if ((offset.left + width) >= $parent.width()) {
+                vector.x = -1 * vector.x;
+            }
+            if (offset.top <= 0 && vector.y < 0) {
+                vector.y = -1 * vector.y;
+            }
+            if ((offset.top + height) >= $parent.height()) {
+                vector.y = -1 * vector.y;
+            }
+
+            $e.css({
+                'top': offset.top + vector.y + 'px',
+                'left': offset.left + vector.x + 'px'
+            }).data('vector', {
+                'x': vector.x,
+                'y': vector.y
+            });
+            
+            setTimeout(function() {
+                move($e);
+            }, 50);
+            
+        };
+        
+        move($this);
+    });
+
+};
+
+$(function() {
+    $('#wrapper li').bounce({
+        'speed': 7
+    });
+});
+
+
+</script>
+<!--<script>
   $(document).ready(function(){
     animateDiv();
     
@@ -161,6 +273,6 @@ function calcSpeed(prev, next) {
     return speed;
     
 }
-</script>
+</script>-->
 </body>
 </html>
