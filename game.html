@@ -92,13 +92,15 @@ li {
     line-height: 60px;
     text-align:center;
     cursor:pointer; }
-
-
+#wrapper{
+	width:400px;
+	height:300px;
+}
 </style>
 </head>
 <body>
 <div class="container">
-  <h2>Mineral Smash 2.20</h2>
+  <h2>Mineral Smash 2.24</h2>
   <table>
     <tr><td><a href=#>Squirming Squares</a></td><td>0%</td></tr>
     <tr><td><a href=#>Linear Life</a></td><td>0%</td></tr>
@@ -124,20 +126,20 @@ li {
         </div>
         <div class="modal-body">
           <!--<div class='a'><div class="shine"></div></div>-->
-          <!--<ul id="wrapper">-->
-    		<li>&spades;</li>
-    		<li>&spades;</li>
-    		<li>&spades;</li>
-    		<li>&spades;</li>
-    		<li>&spades;</li>
-    		<li>&spades;</li>
-    		<li>&spades;</li>
-    		<li>&spades;</li>
-    		<li>&spades;</li>
-    		<li>&spades;</li>
-    		<li>&spades;</li>
-    		<li>&spades;</li>
-	<!--</ul>-->
+          <ul id="wrapper">
+    		<li>0</li>
+    		<li>0</li>
+    		<li>0</li>
+    		<li>0</li>
+    		<li>0</li>
+    		<li>0</li>
+    		<li>0</li>
+    		<li>0</li>
+    		<li>0</li>
+    		<li>0</li>
+    		<li>0</li>
+    		<li>0</li>
+	</ul>
 
         </div>
         <div class="modal-footer">
@@ -224,7 +226,7 @@ li {
 };
 
 $(function() {
-    $('.modal-body li').bounce({
+    $('#wrapper li').bounce({
         'speed': 7
     });
 });
