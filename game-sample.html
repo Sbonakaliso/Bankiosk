@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mineral Smash</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    body, * {
+    padding: 0 !important; margin: 0: }
 
+#wrapper {
+    width:500px; 
+    height: 500px; 
+    border: 
+        1px solid red; }
+
+li {
+    position: absolute;
+    width: 60px;
+    height: 60px;    
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background-color:#0FF;
+    line-height: 60px;
+    text-align:center;
+    cursor:pointer; }
+
+
+  </style>
+</head>
+<body>
+  <ul id="wrapper">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+</ul>
+<script>
+  $.fn.bounce = function(options) {
+    
+    var settings = $.extend({
+        speed: 10
+    }, options);
+
+    return $(this).each(function() {
+        
+        var $this = $(this),
+            $parent = $this.parent(),
+            height = $parent.height(),
+            width = $parent.width(),
+            top = Math.floor(Math.random() * (height / 2)) + height / 4,
+            left = Math.floor(Math.random() * (width / 2)) + width / 4,
+            vectorX = settings.speed * (Math.random() > 0.5 ? 1 : -1),
+            vectorY = settings.speed * (Math.random() > 0.5 ? 1 : -1);
+
+        // place initialy in a random location
+        $this.css({
+            'top': top,
+            'left': left
+        }).data('vector', {
+            'x': vectorX,
+            'y': vectorY
+        });
+
+        var move = function($e) {
+            
+            var offset = $e.offset(),
+                width = $e.width(),
+                height = $e.height(),
+                vector = $e.data('vector'),
+                $parent = $e.parent();
+
+            if (offset.left <= 0 && vector.x < 0) {
+                vector.x = -1 * vector.x;
+            }
+            if ((offset.left + width) >= $parent.width()) {
+                vector.x = -1 * vector.x;
+            }
+            if (offset.top <= 0 && vector.y < 0) {
+                vector.y = -1 * vector.y;
+            }
+            if ((offset.top + height) >= $parent.height()) {
+                vector.y = -1 * vector.y;
+            }
+
+            $e.css({
+                'top': offset.top + vector.y + 'px',
+                'left': offset.left + vector.x + 'px'
+            }).data('vector', {
+                'x': vector.x,
+                'y': vector.y
+            });
+            
+            setTimeout(function() {
+                move($e);
+            }, 50);
+            
+        };
+        
+        move($this);
+    });
+
+};
+
+$(function() {
+    $('#wrapper li').bounce({
+        'speed': 7
+    });
+});
+
+
+</script>
+</body>
+</html>
