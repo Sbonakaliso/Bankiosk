@@ -13,7 +13,7 @@
     }
 
 #wrapper {
-    width:50em; 
+    width:30em; 
     height: 20em; 
     border: 
         1px solid red; 
@@ -24,31 +24,52 @@ li {
     position: absolute;
     width: 60px;
     height: 60px;    
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
+    -webkit-border-radius: 30%;
+    -moz-border-radius: 30%;
     border-radius: 30px;
     background-color:#0FF;
     line-height: 60px;
     text-align:center;
     cursor:pointer; }
-
-
+.shine{
+		color: white;
+		text-align: center;
+		vertical-align: center;
+		font-size: 250%;
+		font-weight: bold;
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.2) 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.7)), color-stop(100% rgba(255,255,255,0.2)));
+		background: webkit-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.2) 100%);
+		background: o-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.2) 100%);
+		background: ms-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.2) 100%);
+		background: linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.2) 100%);
+		filter:
+		progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3ffffff',
+			endColor='33ffffff', GradientType=0);
+		height: 60%;
+		width: 100%;
+		box-shadow: inset 0px 2px 1px rgba(255,255,255,0.7);
+		border-top-right-radius: 30px;
+		border-top-left-radius: 30px;
+		border-bottom-right-radius: 100px 40px;
+		border-bottom-left-radius: 100px 40px;
+	}
   </style>
 </head>
 <body>
   <ul id="wrapper">
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-    <li>6</li>
-    <li>7</li>
-    <li>8</li>
-    <li>7</li>
-    <li>8</li>
-    <li>9</li>
-    <li>10</li>
+    <li><div class="shine">O</div></li>
+    <li><div class="shine">O</div></li>
+    <li><div class="shine">O</div></li>
+    <li><div class="shine">O</div></li>
+    <li><div class="shine">O</div></li>
+    <li><div class="shine">O</div></li>
+    <li><div class="shine">O</div></li>
+    <li><div class="shine">O</div></li>
+    <li><div class="shine">O</div></li>
+    <li><div class="shine">O</div></li>
+    <li><div class="shine">O</div></li>
+    <li><div class="shine">O</div></li>
 </ul>
 <script>
   $.fn.bounce = function(options) {
